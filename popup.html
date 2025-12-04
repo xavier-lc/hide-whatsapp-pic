@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide WhatsApp Pictures</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hide WhatsApp Profile Pictures</h1>
+    
+    <div class="section">
+      <label for="username-input">Add Username:</label>
+      <div class="input-group">
+        <input type="text" id="username-input" placeholder="Enter username">
+        <button id="add-btn">Add</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Configured Usernames</h2>
+      <ul id="username-list"></ul>
+      <p id="empty-message" class="empty-message">No usernames configured</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

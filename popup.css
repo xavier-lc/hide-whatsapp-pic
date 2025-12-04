@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#username-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#username-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.2s;
+}
+
+#username-list li:hover {
+  background: #ebebeb;
+}
+
+#username-list li span {
+  flex: 1;
+  word-break: break-word;
+  font-size: 14px;
+}
+
+.remove-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  min-width: 70px;
+}
+
+.remove-btn:hover {
+  box-shadow: 0 4px 8px rgba(245, 87, 108, 0.4);
+}
+
+.empty-message {
+  color: #999;
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+  font-size: 14px;
+}
+
+#username-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#username-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+#username-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+#username-list::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
