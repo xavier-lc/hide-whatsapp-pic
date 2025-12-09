@@ -17,16 +17,38 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
+function getParentButton(element) {
+  let parent = element.parentElement;
+
+  if (parent.role === 'button') {
+    return parent;
+  }
+
+  return getParentButton(parent);
+}
+
 // Function to hide profile pictures
 function hideProfilePictures() {
   usernames.forEach(username => {
     if (username && username.trim()) {
-      const selector = `[aria-label="Open chat details for ${username}"] img`;
-      const images = document.querySelectorAll(selector);
-      
-      images.forEach(img => {
+      const chatImagesSelector = `[aria-label="Open chat details for ${username}"] img`;
+      const chatImages = document.querySelectorAll(chatImagesSelector);
+
+      chatImages.forEach(img => {
         img.style.display = 'none';
-        console.log(`Hidden profile picture for: ${username}`);
+        console.log(`Hidden chat profile picture for: ${username}`);
+      });
+
+      const groupInfoNameSelector = `span[title="${username}"]`;
+      const groupInfoNames = document.querySelectorAll(groupInfoNameSelector);
+
+      groupInfoNames.forEach(element => {
+        const button = getParentButton(element);
+        const profilePic = button.querySelector('img');
+        if (profilePic) {
+          profilePic.style.display = 'none';
+        }
+        console.log(`Hidden group info profile picture for: ${username}`);
       });
     }
   });
