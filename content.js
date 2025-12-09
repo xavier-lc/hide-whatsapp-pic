@@ -50,6 +50,17 @@ function hideProfilePictures() {
         }
         console.log(`Hidden group info profile picture for: ${username}`);
       });
+
+      var reactionRowSelector = `[aria-label*="${username} reacted with"]`;
+      var reactionRows = document.querySelectorAll(reactionRowSelector);
+
+      reactionRows.forEach(element => {
+        const profilePic = element.querySelector('img');
+        if (profilePic) {
+          profilePic.style.display = 'none';
+        }
+        console.log(`Hidden reaction profile picture for: ${username}`);
+      });
     }
   });
 }
