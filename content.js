@@ -27,21 +27,6 @@ function getParentButton(element) {
   return getParentButton(parent);
 }
 
-// Bubble with the "..." dots shown next to the avatar while someone is typing
-const typingBubbleSelector = '#main div.x1ew7x2d.x78zum5.xdt5ytf.x156j7k.x1cy8zhl.x1bczwif';
-
-// The open chat's header shows "<name> is typing…" (or "<name> and ... are typing…")
-function isTyping(username) {
-  const header = document.querySelector('#main header');
-  if (!header) {
-    return false;
-  }
-
-  return Array.from(header.querySelectorAll('span')).some(span =>
-    span.textContent.includes(username) && span.textContent.includes('typing')
-  );
-}
-
 // Function to hide profile pictures
 function hideProfilePictures() {
   usernames.forEach(username => {
@@ -76,18 +61,6 @@ function hideProfilePictures() {
         }
         console.log(`Hidden reaction profile picture for: ${username}`);
       });
-
-      if (isTyping(username)) {
-        const typingBubbles = document.querySelectorAll(typingBubbleSelector);
-
-        typingBubbles.forEach(bubble => {
-          const profilePic = bubble.parentElement.querySelector('img');
-          if (profilePic) {
-            profilePic.style.display = 'none';
-          }
-          console.log(`Hidden typing profile picture for: ${username}`);
-        });
-      }
     }
   });
 }
