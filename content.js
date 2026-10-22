@@ -61,6 +61,21 @@ function hideProfilePictures() {
         }
         console.log(`Hidden reaction profile picture for: ${username}`);
       });
+
+      const contactInfoDrawers = document.querySelectorAll('[data-testid="chat-info-drawer"]');
+
+      contactInfoDrawers.forEach(drawer => {
+        const name = drawer.querySelector('[data-testid~="contact-info-subtitle"]');
+        if (!name || name.textContent.trim() !== username) {
+          return;
+        }
+
+        const profilePic = drawer.querySelector('button[aria-label="View photo"] svg');
+        if (profilePic) {
+          profilePic.style.display = 'none';
+        }
+        console.log(`Hidden contact info profile picture for: ${username}`);
+      });
     }
   });
 }
